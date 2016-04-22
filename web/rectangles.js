@@ -37,20 +37,46 @@
 
    });
 
-   var myRectangle = new Rectangle({
-     width: 100,
-     height: 60,
-     position: {
-       x: 300,
-       y: 150
-    },
-    color: "green"
+   var models = [
+      new Rectangle({
+         width: 100,
+         height: 60,
+         position: {
+            x: 300,
+            y: 150
+         },
+         color: "green"
+      }),
+      new Rectangle({
+         width: 130,
+         height: 90,
+         position: {
+            x: 5,
+            y: 400
+         },
+         color: "blue"
+      }),new Rectangle({
+         width: 122,
+         height: 32,
+         position: {
+            x: 180,
+            y: 220
+         },
+         color: "black"
+      }),new Rectangle({
+         width: 300,
+         height: 400,
+         position: {
+            x: 322,
+            y: 554
+         },
+         color: "red"
+      })
+   ];
+
+   _(models).each(function(model){
+      $('div#canvas').append(new RectangleView({model: model}).render().el);
 
    });
-
-   var myView = new RectangleView({model: myRectangle});
-   $('div#canvas').append(myView.render().el);
-
-
-
+   //var myView = new RectangleView({model: myRectangle});
  })();
